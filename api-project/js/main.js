@@ -6,4 +6,11 @@ async function getData(URL) {
     const data = await response.json();
     console.log(data);
 }
+//user input
+function pokemonInput(){
+    let userInput = document.querySelector("#userInput");
+    let message = document.querySelector("#message");
+  }
+// let pokemon = prompt("Please Enter a Pokemon Name");
+
 getData(URL);
