@@ -1,8 +1,8 @@
 import '../styles/style.css';
-import { DOMSelectors } from "./DOM";
+// import { DOMSelectors } from "./DOM";
 
 //array
-const URL = "https://pokeapi.co/api/v2/pokemon/"
+const URL = "https://pokeapi.co/api/v2/pokemon/";
 async function getData(URL) {
     const response = await fetch(URL);
     const data = await response.json();
@@ -10,6 +10,7 @@ async function getData(URL) {
 }
 
 getData(URL);
+
 //theme
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.btn');
