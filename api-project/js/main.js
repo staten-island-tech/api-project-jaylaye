@@ -1,5 +1,5 @@
 import '../styles/style.css';
-// import { DOMSelectors } from "./DOM";
+import { DOMSelectors } from "./DOM";
 
 //array
 const URL = "https://pokeapi.co/api/v2/pokemon/";
@@ -11,7 +11,26 @@ async function getData(URL) {
 
 getData(URL);
 
-//theme
+DOMSelectors.form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const card = {
+      Poke: DOMSelectors.Poke.value,
+  };
+  createCard(card);
+  clearFields();
+});
+
+function clearFields() {
+  DOMSelectors.Poke.value = "";
+
+};
+
+function createCard(card) {
+  DOMSelectors.container.insertAdjacentHTML()
+  removeW();
+};
+
+/*theme
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.btn');
   const themeButton = document.getElementById('theme');
@@ -27,4 +46,4 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     toggleTheme();
   });
-});
+}); */
