@@ -31,24 +31,21 @@ async function fetchPokemonDetails(pokemonId) {
   }
 }
 
+function createCard(card) {
+  const cardHTML = '
+  <div class = "jnanjca">
+  <p>${card.pokedexNumber}</p>
+  <h2>${card.pokemonName}</h2>
+  </div>
+  ';
+  DOMSelectors.containter.insertAdjacentHTML('beforeEnd',cardHTML);
+};
+
 /*
 DOMSelectors.form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const pokemonName = DOMSelectors.Poke.value.trim();
-
-  if (pokemonName !== "") {
-    try {
-      const data = await fetchData(pokemonName);
-      createCard(data);
-      clearFields();
-    } catch (error) {
-      alert("Failed to fetch Pokemon data. Please try again.");
-    }
-  } else {
-    alert("Please enter a Pokemon name.");
-  }
-});
 
 function clearFields() {
   DOMSelectors.Poke.value = "";
@@ -58,6 +55,21 @@ function createCard(card) {
   DOMSelectors.container.insertAdjacentHTML()
   removeW();
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //theme
 /*
