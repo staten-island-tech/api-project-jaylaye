@@ -2,6 +2,7 @@ import '../styles/style.css';
 import { DOMSelectors } from "./DOM";
 
 //array
+
 const URL = "https://pokeapi.co/api/v2/pokemon/?limit=386";
 async function getData(URL) {
   try {
@@ -14,6 +15,7 @@ async function getData(URL) {
   }
 }
 getData(URL);
+
 
 async function fetchPokemonDetails(pokemonId) {
   try {
@@ -32,29 +34,29 @@ async function fetchPokemonDetails(pokemonId) {
 }
 
 function createCard(card) {
-  const cardHTML = '
-  <div class = "jnanjca">
+  const cardHTML = `
+  <div class = "pokecard">
   <p>${card.pokedexNumber}</p>
   <h2>${card.pokemonName}</h2>
+  <p>${card.types}</p>
+  <p>${card.moves}</p>
   </div>
-  ';
-  DOMSelectors.containter.insertAdjacentHTML('beforeEnd',cardHTML);
+  `;
+
+  DOMSelectors.containter.insertAdjacentHTML('beforeend',cardHTML);
 };
 
-/*
-DOMSelectors.form.addEventListener("submit", async function (event) {
-  event.preventDefault();
-
-  const pokemonName = DOMSelectors.Poke.value.trim();
-
-function clearFields() {
-  DOMSelectors.Poke.value = "";
+function clearCards(){
+  const container = DOMSelectors.container;
+  container.innerHTML = '';
 }
 
-function createCard(card) {
-  DOMSelectors.container.insertAdjacentHTML()
-  removeW();
-};
+
+DOMSelectors.form.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  clearCards();
+
+});
 
 
 
@@ -69,10 +71,8 @@ function createCard(card) {
 
 
 
-
-
-//theme
 /*
+
 function toggleTheme() {
   console.log("Toggle theme function called");
   document.body.classList.toggle("dark-theme");
