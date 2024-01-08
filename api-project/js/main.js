@@ -100,5 +100,4 @@ DOMSelectors.form.addEventListener("submit", async function (event) {
   }
 });
 
-const secondURL = "https://pokeapi.co/api/v2/evolution-chain/?limit=202"
 
