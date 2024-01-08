@@ -51,6 +51,7 @@ function createCard(card) {
       <h3>Type: ${card.types.join(', ')}</h3>
       <img src="${card.image}" alt="${capitalizedPokemonName} Image">
       <p>Possible Moves: ${card.moves.join(', ')}</p>
+      <button class="remove-btn">Remove</button>
     </div>
   `;
 
@@ -61,6 +62,7 @@ function createCard(card) {
       <ul>
         ${card.stats.map(stat => `<li>${stat.name}: ${stat.value}</li>`).join('')}
       </ul>
+      <button class="remove-btn">Remove</button>
     </div>
   `;
 
@@ -72,6 +74,13 @@ function createCard(card) {
       ${statsCardHTML}
     </div>
   `;
+
+  const removeButtons = document.querySelectorAll('.remove-btn');
+  removeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.parentElement.remove();
+    });
+  });
 }
 
 function displayErrorMessage(message) {
