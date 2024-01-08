@@ -1,3 +1,11 @@
+
+body {
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/de33uyt-aab270ae-87c5-4511-89a9-05f39dcb1de8.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZGUzM3V5dC1hYWIyNzBhZS04N2M1LTQ1MTEtODlhOS0wNWYzOWRjYjFkZTguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oGlO68Olut79X7bq5sUnen9adcLuqNbBJ7-bPUE6dtU);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
 h1 {
   text-align: center;
   font-size: 40px;
@@ -8,17 +16,16 @@ h1 {
   font-size: 18px;
 }
 
-body {
-  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2fb2821a-1406-4a1d-9b04-6668f278e944/de33uyt-aab270ae-87c5-4511-89a9-05f39dcb1de8.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJmYjI4MjFhLTE0MDYtNGExZC05YjA0LTY2NjhmMjc4ZTk0NFwvZGUzM3V5dC1hYWIyNzBhZS04N2M1LTQ1MTEtODlhOS0wNWYzOWRjYjFkZTguanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.oGlO68Olut79X7bq5sUnen9adcLuqNbBJ7-bPUE6dtU);
-  background-size: cover;
-  background-repeat: no-repeat;
+#pokemon-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto;
 }
 
-#pokemon-container {
-  width: 33.33%;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
+.pokecard-container{
+  width: 48%;
 }
 
 .pokecard {
@@ -33,8 +40,30 @@ body {
 }
 
 .pokecard img {
-  min-width: 400px;
-  min-height: 400px;
+  min-width: 300px;
+  min-height: 300px;
   margin-top: 10px;
 }
 
+.pokecard ul {
+  list-style-type: none;
+  padding: 0;
+
+}
+
+.pokecard li {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.pokecard h2 {
+  font-size: 30px;
+}
+
+.pokecard h3 {
+  font-size: 20px;
+}
+
+.pokecard p {
+  font-size: 15px;
+}
