@@ -46,7 +46,7 @@ function createCard(card) {
       <h2>${capitalizedPokemonName} #${card.pokedexNumber}</h2>
       <p>Type: ${card.types.join(', ')}</p>
       <img src="${card.image}" alt="${capitalizedPokemonName} Image">
-      <p>Moves: ${card.moves.join(', ')}</p>
+      <p>Possible Moves: ${card.moves.join(', ')}</p>
     </div>
   `;
 
@@ -76,12 +76,4 @@ DOMSelectors.form.addEventListener("submit", async function (event) {
   }
 });
 
-
-
-
-
-
-
-
-
-
+const secondURL = "https://pokeapi.co/api/v2/evolution-chain/?limit=202"
