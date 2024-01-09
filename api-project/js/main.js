@@ -7,7 +7,14 @@ async function getData(URL) {
   try {
     const response = await fetch(URL);
     const data = await response.json();
-    document.getElementById("api-response").textContent = JSON.stringify(data);
+    const pokemonList = data.results;
+
+   for (const pokemon of pokemonList){
+      const pokemonDetails = await fetchPokemonDetails(pokemon.name);
+      createCard(pokemonDetails);
+    }
+  
+   // document.getElementById("api-response").textContent = JSON.stringify(data);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -18,7 +25,7 @@ async function fetchPokemonDetails(pokemonId) {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
     if (!response.ok) {
-      throw new Error('Invalid Pokémon name or ID');
+      throw new Error('Invalid Pokémon name or ID');ff
     }
 
     const data = await response.json();
@@ -37,7 +44,10 @@ async function fetchPokemonDetails(pokemonId) {
     throw error;
   }
 }
-
+/* {
+  getData("https://pokeapi.co/api/v2/pokemon/?limit=386");
+}
+*/
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -109,4 +119,6 @@ DOMSelectors.form.addEventListener("submit", async function (event) {
   }
 });
 
-
+window.addEventListener("load", () => {
+  getData(URL);
+});
